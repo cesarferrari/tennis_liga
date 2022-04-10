@@ -1,0 +1,161 @@
+<resources>
+    <string name="app_name">tennis_liga</string>
+    <string name="new_user">nuevo usuario</string>
+    <string-array name="meses">
+        <item>enero</item>
+        <item>febrero</item>
+        <item>marzo</item>
+        <item>abril</item>
+        <item>mayo</item>
+        <item>junio</item>
+        <item>julio</item>
+        <item>agosto </item>
+        <item>septiembre</item>
+        <item>octubre</item>
+        <item>noviembre</item>
+        <item>diciembre</item>
+
+    </string-array>
+    <string-array name="años">
+        <item>2022</item>
+        <item>2023</item>
+        <item>2024</item>
+        <item>2025</item>
+    </string-array>
+
+    <string-array name="dias">
+
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+        <item>06</item>
+        <item>07</item>
+        <item>08</item>
+        <item>09</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+    </string-array>
+    <string-array name="camiseta">
+        <item>talla-S</item>
+        <item>talla-M</item>
+        <item>talla-L</item>
+        <item>talla-XL</item>
+        <item>talla-XXL</item>
+        <item>talla-XXXL</item>
+        <item>selecciona tu talla</item>
+    </string-array>
+    <string name="jugados">jugados</string>
+    <string name="ganados">ganados</string>
+    <string name="efectividad">efectividad</string>
+    <string name="menu_home">menu principal</string>
+    <string name="boton_busqueda1">busqueda</string>
+    <string name="boton_clasificacion1">Clasificacion</string>
+    <string name="boton_competicion1">Competicion</string>
+    <string name="boton_home1">Hogar</string>
+    <string name="boton_productos1">Productos</string>
+    <string name="boton_infProductos1">informacion de  productos</string>
+    <string name="boton_infServicios1">information de servicios</string>
+    <string name="boton_M_admin1">Menu administrador</string>
+    <string name="boton_M_user1x">Menu usuario</string>
+    <string name="boton_perfil1">Perfil</string>
+    <string name="boton_ranking1">puestos</string>
+    <string name="bienvenida">bienvenido</string>
+    <string name="usuario">usuario</string>
+    <string name="nombre">nombre</string>
+    <string name="apellido">apellido</string>
+    <string name="contraseña">contraseña</string>
+    <string name="nacimiento">fecha de nacimiento</string>
+    <string name="nal">nacionalidad</string>
+    <string name="pais">pais actual</string>
+    <string name="dir">direccion</string>
+    <string name="talla">talla camiseta</string>
+    <string name="email">email</string>
+    <string name="raqueta">raqueta</string>
+    <string name="cordaje">cordaje</string>
+    <string name="golpe">mejor golpe</string>
+    <string name="sexo">sexo</string>
+    <string name="hombre">masculino</string>
+    <string name="mujer">femenino</string>
+    <string name="juego">estilo juego</string>
+    <string name="admin">administrador</string>
+    <string name="tipo_evento">tipo de evento</string>
+    <string name="categoria">categoria</string>
+    <string name="premio">premio</string>
+    <string name="sede">sede</string>
+    <string name="fecha_inicio">fecha inicio</string>
+    <string name="fecha_fin">fecha fin</string>
+    <string name="erroC">error de conexion</string>
+    <string name="conexion">conexion exitosa </string>
+    <string name="fecha">fecha</string>
+    <string name="inicio">seleccione fecha inicio</string>
+    <string name="fin">seleccione  fecha  fin</string>
+    <string name="nivel">nivel</string>
+    <string name="jugador">jugador</string>
+    <string name="cero">0</string>
+    <string name="padel">padel</string>
+    <string name="cargando">cargando...</string>
+    <string name="boton_contraseña1">Recuperar contraseña</string>
+    <string name="boton_registro_1x">registrar 1</string>
+    <string name="boton_registro_2x">registrar 2</string>
+    <string name="boton_rival1">oponente</string>
+    <string name="boton_product1">Productos</string>
+    <string name="boton_servicios1">Servicios</string>
+    <string name="boton_crearEvento">Crear evento</string>
+    <string name="boton_option1">Opcion1</string>
+    <string name="boton_option2">Opcion 2</string>
+    <string name="boton_option3">Opcion 3</string>
+    <string name="boton_cc">competicion Clasificacion</string>
+    <string name="boton_info_event">info event</string>
+    <string name="gan">G</string>
+    <string name="perdidos">P</string>
+    <string name="last_games">ultimos 5 juegos</string>
+    <string name="estadisticas">estadisticas</string>
+    <string name="datos_jugador">datos jugador</string>
+    <string name="habilidades_jugador">habilidades jugador</string>
+    <string name="name">name</string>
+    <string name="resultados_competencia">resultados competencia</string>
+    <string name="managerRol">administrador rol</string>
+    <string name="administrar">administrar</string>
+    <string name="asignarAdministrador">asignar administrador</string>
+    <string name="asignarJugador">asignar jugador</string>
+    <string name="resultados">guardar resultados</string>
+    <string name="start">inicio</string>
+    <string name="end">fin</string>
+    <string name="opcion">elige una opcion</string>
+    <string name="liga">liga tennis</string>
+    <string name="principal">principal</string>
+    <string name="secunadario">secundario</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_home_admin">HomeAdminActivity</string>
+    <string name="open">abrir</string>
+    <string name="close">cerrar</string>
+    <string name="btn_foto">insertar imagen</string>
+    <string name="imagen">imagen de perfil</string>
+    <string name="galeria">galeria</string>
+    <string name="asigna_rol">selecciona un perfil para asignar rol administrador</string>
+    <string name="asigna_rolJ">selecciona un perfil para asignar rol jugador</string>
+    <string name="deber">debes de llenar todos los campos </string>
+    <string name="no_encuentra">usuario y contraseña no se encuentran</string>
+</resources>

@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".DatosPerfil">
+
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium1"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="match_parent"
+                    android:layout_height="402dp"
+                    app:srcCompat="@drawable/roja"
+                    tools:layout_editor_absoluteX="-83dp"
+                    tools:layout_editor_absoluteY="16dp" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginBottom="4dp"
+                    android:src="@drawable/img"
+                    app:civ_border_color="#FF000000"
+                    app:civ_border_width="2dp"
+                    app:layout_constraintBottom_toTopOf="@+id/textView15"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/imageButton5"
+                    android:layout_width="52dp"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/white"
+                    app:layout_constraintBottom_toTopOf="@+id/imageButton7"
+                    app:layout_constraintEnd_toStartOf="@+id/profile_image"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@android:drawable/checkbox_on_background" />
+
+                <ImageButton
+                    android:id="@+id/imageButton6"
+                    android:layout_width="52dp"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="268dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.787"
+                    app:layout_constraintStart_toEndOf="@+id/imageButton5"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@android:drawable/ic_menu_delete" />
+
+                <ImageView
+                    android:id="@+id/imageButton7"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="168dp"
+                    app:layout_constraintBottom_toTopOf="@+id/textView6"
+                    app:layout_constraintEnd_toStartOf="@+id/profile_image"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@drawable/mexico2" />
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="260dp"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="TextView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.956"
+                    app:layout_constraintStart_toEndOf="@+id/imageButton7"
+                    app:layout_constraintTop_toTopOf="@+id/imageButton6" />
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="TextView"
+                    app:layout_constraintBottom_toTopOf="@+id/textView7"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.987"
+                    app:layout_constraintStart_toEndOf="@+id/profile_image"
+                    app:layout_constraintTop_toBottomOf="@+id/textView13"
+                    app:layout_constraintVertical_bias="0.075" />
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:gravity="center"
+                    android:text="TextView"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/textView16"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.473"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    style="@style/botones2"
+                    android:layout_marginBottom="40dp"
+                    android:background="@drawable/label_redondo"
+                    android:gravity="center"
+                    android:text="20"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textView7"
+                    app:layout_constraintHorizontal_bias="0.533"
+                    app:layout_constraintStart_toEndOf="@+id/textView6" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    style="@style/botones2"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="40dp"
+                    android:background="@drawable/label_redondo"
+                    android:gravity="center"
+                    android:text="20"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    style="@style/botones2"
+                    android:layout_marginBottom="40dp"
+                    android:background="@drawable/label_redondo"
+                    android:gravity="center"
+                    android:text="20"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/jugador"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toTopOf="@+id/textView5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.461"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/medium"
+                android:gravity="center">
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_juegoX"
+                        style="@style/bandera1"
+                        android:layout_gravity="center_horizontal"
+
+                        android:gravity="center"
+                        android:text="@string/datos_jugador"
+                        android:textStyle="bold" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton3"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@color/white"
+
+                        android:src="@android:drawable/ic_menu_edit" />
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_nombreX"
+                        style="@style/bandera1"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:text="@string/nombre"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+
+                    <EditText
+                        android:id="@+id/txt_nombreY"
+                        style="@style/bandera1"
+                        android:layout_width="90dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:hint="Name"
+                        android:inputType="textPersonName"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_apellidoX"
+                        style="@style/bandera1"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:text="@string/apellido"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+
+                    <EditText
+                        android:id="@+id/txt_apellidoY"
+                        style="@style/bandera1"
+                        android:layout_width="90dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:hint="Name"
+                        android:inputType="textPersonName"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_nacionalidadY"
+                        style="@style/bandera1"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:text="@string/nal"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+
+                    <EditText
+                        android:id="@+id/txt_nacionalidadX"
+                        style="@style/bandera1"
+                        android:layout_width="90dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:hint="Name"
+                        android:inputType="textPersonName"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_paisX"
+                        style="@style/bandera1"
+                        android:layout_width="184dp"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:text="@string/pais"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+
+                    <EditText
+                        android:id="@+id/txt_paisA"
+                        style="@style/bandera1"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:hint="Name"
+                        android:inputType="textPersonName"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_tallaY"
+                        style="@style/bandera1"
+                        android:layout_width="184dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:text="@string/talla"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txt_tallaX"
+                        style="@style/bandera1"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:hint="Name"
+                        android:inputType="textPersonName"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_estiloX"
+                        style="@style/bandera1"
+                        android:layout_width="184dp"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:text="@string/juego"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+
+                    <EditText
+                        android:id="@+id/txt_estiloY"
+                        style="@style/bandera1"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:hint="Name"
+                        android:inputType="textPersonName"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TableRow
+                        android:layout_width="395dp"
+                        android:layout_height="6dp">
+
+                        <TextView
+                            android:id="@+id/txt_caracteristicas"
+                            style="@style/bandera1"
+                            android:layout_width="184dp"
+
+                            android:layout_gravity="center_horizontal"
+                            android:layout_span="2"
+                            android:gravity="center"
+                            android:text="@string/habilidades_jugador"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+
+                    </TableRow>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_golpe"
+                        style="@style/bandera1"
+
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:text="@string/golpe"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+
+                    <EditText
+                        android:id="@+id/txt_golpeA"
+                        style="@style/bandera1"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:hint="Name"
+                        android:inputType="textPersonName"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_raqueta"
+                        style="@style/bandera1"
+
+
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:text="@string/raqueta"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txt_raquetaA"
+                        style="@style/bandera1"
+                        android:layout_height="wrap_content"
+
+                        android:layout_gravity="center_horizontal"
+                        android:hint="Name"
+                        android:inputType="textPersonName"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_cordajeA"
+                        style="@style/bandera1"
+                        android:layout_gravity="center_horizontal"
+
+                        android:gravity="center"
+                        android:text="@string/cordaje"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txt_cordajeB"
+                        style="@style/bandera1"
+                        android:layout_height="wrap_content"
+
+                        android:layout_gravity="center_horizontal"
+                        android:hint="Name"
+                        android:inputType="textPersonName"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_estadisticas"
+                        style="@style/bandera1"
+                        android:layout_width="184dp"
+
+                        android:layout_gravity="center_horizontal"
+                        android:layout_span="2"
+                        android:gravity="center"
+                        android:text="@string/estadisticas"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_ultimos"
+                        style="@style/bandera1"
+                        android:layout_width="184dp"
+
+                        android:layout_gravity="center_horizontal"
+                        android:layout_span="2"
+                        android:gravity="center"
+                        android:text="last 5 games"
+
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+                </TableRow>
+
+
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</FrameLayout>

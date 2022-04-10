@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fab_margin">48dp</dimen>
+    <dimen name="space">15dp</dimen>
+    <dimen name="espacio">27dp</dimen>
+    <dimen name="small">36dp</dimen>
+    <dimen name ="medium">72dp</dimen>
+    <dimen name ="medium1">144dp</dimen>
+    <dimen name="large">210dp</dimen>
+    <dimen name="large1">300dp</dimen>
+    <dimen name="large_1">375dp</dimen>
+    <dimen name="large3">450dp</dimen>
+    <dimen name="large2">600dp</dimen>
+    <dimen name="maxi">810</dimen>
+    <dimen name ="max">900dp</dimen>
+    <dimen name ="maxima">1500dp</dimen>
+    <dimen name ="height">2250dp</dimen>
+    <dimen name ="text">36sp</dimen>
+</resources>

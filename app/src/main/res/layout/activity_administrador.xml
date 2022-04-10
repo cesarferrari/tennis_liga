@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Administrador">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/space"
+                android:gravity="center"
+                android:text="@string/admin"
+                android:textColor="@color/admin_amarillo"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/CrearAdmin"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onclick"
+                    android:textSize="9sp"
+                    android:text="@string/managerRol"
+                    app:cornerRadius="15dp"
+                    app:strokeColor="@color/admin_amarillo" />
+
+
+                <Button
+                    android:id="@+id/Resultados"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onclick"
+                    android:textSize="9sp"
+                    android:text="@string/resultados_competencia"
+                    app:cornerRadius="15dp"
+                    app:strokeColor="@color/admin_amarillo" />
+
+                <Button
+                    android:id="@+id/CrearEvento"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onclick"
+
+                    android:textSize="9sp"
+                    android:text="@string/boton_crearEvento"
+                    app:cornerRadius="15dp"
+
+                    app:strokeColor="@color/admin_amarillo" />
+
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/home"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onclick"
+                android:textSize="20sp"
+                android:text="@string/menu_home"
+                android:layout_marginLeft="@dimen/space"
+                android:layout_marginRight="@dimen/space"
+                app:cornerRadius="15dp"
+
+                app:strokeColor="@color/admin_amarillo" />
+            <FrameLayout
+                android:id="@+id/contenedor"
+                android:name="com.example.liga_padel.CrearCompetenciaFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

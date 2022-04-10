@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="btn">
+
+        <item name="android:layout_width">@dimen/large_1</item>
+        <item name="android:layout_height">@dimen/medium</item>
+        <item name="android:scaleType">fitCenter</item>
+
+    </style>
+    <style name ="band">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+    <style name ="bandera">
+        <item name="android:layout_width">90dp</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+    <style name ="bandera1">
+        <item name="android:layout_width">220dp</item>
+        <item name="android:layout_height">25dp</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+    <style name ="bandera2">
+        <item name="android:layout_width">220dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+    <style name="botones">
+        <item name="android:layout_width">@dimen/large</item>
+        <item name="android:layout_height">@dimen/large</item>
+        <item name="android:scaleType">fitCenter</item>
+
+    </style>
+    <style name="botones2">
+        <item name="android:layout_width">@dimen/large1</item>
+        <item name="android:layout_height">@dimen/large1</item>
+        <item name="android:scaleType">fitCenter</item>
+
+    </style>
+    <style name="botones_2">
+        <item name="android:layout_width">@dimen/large_1</item>
+        <item name="android:layout_height">@dimen/large_1</item>
+        <item name="android:scaleType">fitCenter</item>
+
+    </style>
+    <style name="botonLargo">
+        <item name="android:layout_width">@dimen/max</item>
+        <item name="android:layout_height">@dimen/medium1</item>
+        <item name="android:scaleType">fitCenter</item>
+
+    </style>
+    <style name="botonesR">
+        <item name="android:layout_width">@dimen/max</item>
+        <item name="android:layout_height">@dimen/max</item>
+        <item name="android:scaleType">fitCenter</item>
+
+    </style>
+    <style name="espacio">
+        <item name="android:layout_width">@dimen/espacio</item>
+        <item name="android:layout_height">@dimen/espacio</item>
+
+    </style>
+    <style name="space">
+        <item name="android:layout_width">@dimen/space</item>
+        <item name="android:layout_height">@dimen/space</item>
+
+    </style>
+
+
+    <style name="espacioR">
+        <item name="android:layout_width">@dimen/medium</item>
+        <item name="android:layout_height">@dimen/medium</item>
+
+    </style>
+    <style name="espacio2">
+        <item name="android:layout_width">@dimen/maxi</item>
+        <item name="android:layout_height">@dimen/maxi</item>
+
+    </style>
+    <style name="espacio3">
+        <item name="android:layout_width">@dimen/maxima</item>
+        <item name="android:layout_height">@dimen/maxima</item>
+
+    </style>
+</resources>
