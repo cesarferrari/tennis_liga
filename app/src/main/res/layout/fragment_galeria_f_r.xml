@@ -32,9 +32,43 @@
             app:cornerRadius="15dp"
             app:strokeColor="@color/admin_amarillo"
             android:onClick="onClick"/>
+
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_estadisticas"
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:enabled="false"
+        android:onClick="onClick"
+        android:text="estadisticas"
+        android:textSize="12sp"
+        app:cornerRadius="15dp"
+        android:layout_marginLeft="@dimen/large"
+        android:layout_marginRight="@dimen/large"
+        app:strokeColor="@color/admin_amarillo" />
+    <Button
+        android:id="@+id/btn_jugador"
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:enabled="false"
+        android:onClick="onClick"
+        android:text="datos generales"
+        android:textSize="12sp"
+        app:cornerRadius="15dp"
+        android:layout_marginLeft="@dimen/large"
+        android:layout_marginRight="@dimen/large"
+        app:strokeColor="@color/admin_amarillo" />
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/recycler_id"/>
+
+    <TextView
+        android:id="@+id/txt_g1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="are you crazy" />
+
+
 </LinearLayout>

@@ -75,7 +75,7 @@
     <string name="ganados">Earned</string>
     <string name="efectividad">Effectiveness</string>
     <string name="admin">manager</string>
-
+    <string name="espectador">Viewer</string>
     <string name="boton_competicion1">Competition</string>
     <string name="boton_home1">Home</string>
     <string name="boton_productos1">Products</string>
@@ -90,8 +90,13 @@
     <string name="boton_registro_2x">register 2</string>
     <string name="boton_rival1">oponent</string>
     <string name="boton_product1">Products</string>
+    <string name="nuevo">new Result</string>
     <string name="boton_servicios1">Services</string>
     <string name="boton_crearEvento">Create event</string>
+    <string name="boton_crearMatch">Create Match</string>
+    <string name="choose_player1">Choose player </string>
+    <string name="same_player">cannot store the same player</string>
+    <string name="tipo_match">type event</string>
     <string name="boton_option1">Option 1</string>
     <string name="boton_option2">Option 2</string>
     <string name="boton_option3">Option 3</string>
@@ -119,6 +124,7 @@
     <string name="premio">prize</string>
     <string name="nivel">level</string>
     <string name="jugador">player</string>
+    <string name="jugador_admin">player/manager</string>
     <string name="cero">0</string>
     <string name="sede">place</string>
     <string name="padel">paddle</string>
@@ -141,11 +147,14 @@
     <string name="asignarAdministrador">add manager</string>
     <string name="asignarJugador">add player</string>
     <string name="opcion">choose option</string>
-    <string name="resultados">save results</string>
+    <string name="resultados">store results</string>
+    <string name="nuevoE">new match</string>
     <string name="inicio">choose the start date</string>
     <string name="fin">choose the end date</string>
+    <string name="match">create match</string>
     <string name="principal">principal</string>
     <string name="secunadario">secondary</string>
+    <string name="mycompetition">my competitions</string>
     <string name="open">open</string>
     <string name="close">close</string>
     <string name="bienvenida">welcome</string>

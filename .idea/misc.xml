@@ -5,28 +5,40 @@
       <map>
         <entry key="..\:/Documentos/tennis_liga/app/src/main/res/drawable-v24/components.xml" value="0.1" />
         <entry key="..\:/Documentos/tennis_liga/app/src/main/res/drawable-v24/label_redondo.xml" value="0.1" />
-        <entry key="..\:/Documentos/tennis_liga/app/src/main/res/layout/activity_administrador.xml" value="0.15520833333333334" />
+        <entry key="..\:/Documentos/tennis_liga/app/src/main/res/layout/activity_administrador.xml" value="0.25" />
+        <entry key="..\:/Documentos/tennis_liga/app/src/main/res/layout/activity_competencias.xml" value="0.203125" />
+        <entry key="..\:/Documentos/tennis_liga/app/src/main/res/layout/activity_estadisticas.xml" value="0.25" />
         <entry key="..\:/Documentos/tennis_liga/app/src/main/res/layout/activity_home.xml" value="0.15520833333333334" />
         <entry key="..\:/Documentos/tennis_liga/app/src/main/res/layout/activity_login.xml" value="0.15520833333333334" />
         <entry key="..\:/Documentos/tennis_liga/app/src/main/res/layout/activity_main.xml" value="0.14114583333333333" />
         <entry key="..\:/Documentos/tennis_liga/app/src/main/res/layout/activity_nuevo_usuario.xml" value="0.25" />
+        <entry key="..\:/Documentos/tennis_liga/app/src/main/res/layout/activity_prueba.xml" value="0.203125" />
+        <entry key="..\:/Documentos/tennis_liga/app/src/main/res/layout/barra_admin.xml" value="0.15520833333333334" />
         <entry key="..\:/Documentos/tennis_liga/app/src/main/res/layout/content_main.xml" value="0.15520833333333334" />
         <entry key="..\:/Documentos/tennis_liga/app/src/main/res/layout/drawer_toolbar.xml" value="0.15520833333333334" />
+        <entry key="..\:/Documentos/tennis_liga/app/src/main/res/layout/fragment_competencia_participante.xml" value="0.203125" />
         <entry key="..\:/Documentos/tennis_liga/app/src/main/res/layout/fragment_competencias_f_r.xml" value="0.15520833333333334" />
-        <entry key="..\:/Documentos/tennis_liga/app/src/main/res/layout/fragment_crear_administrador.xml" value="0.15520833333333334" />
+        <entry key="..\:/Documentos/tennis_liga/app/src/main/res/layout/fragment_crear_administrador.xml" value="0.33" />
         <entry key="..\:/Documentos/tennis_liga/app/src/main/res/layout/fragment_crear_competencia.xml" value="0.33" />
-        <entry key="..\:/Documentos/tennis_liga/app/src/main/res/layout/fragment_datos_perfil.xml" value="0.33" />
+        <entry key="..\:/Documentos/tennis_liga/app/src/main/res/layout/fragment_datos_perfil.xml" value="0.25" />
+        <entry key="..\:/Documentos/tennis_liga/app/src/main/res/layout/fragment_frag_match.xml" value="0.25" />
         <entry key="..\:/Documentos/tennis_liga/app/src/main/res/layout/fragment_galeria_f_r.xml" value="0.25" />
         <entry key="..\:/Documentos/tennis_liga/app/src/main/res/layout/fragment_login.xml" value="0.15520833333333334" />
+        <entry key="..\:/Documentos/tennis_liga/app/src/main/res/layout/fragment_my_competitions.xml" value="0.203125" />
         <entry key="..\:/Documentos/tennis_liga/app/src/main/res/layout/fragment_perfil_f_r.xml" value="0.25" />
-        <entry key="..\:/Documentos/tennis_liga/app/src/main/res/layout/fragment_resultados.xml" value="0.15520833333333334" />
+        <entry key="..\:/Documentos/tennis_liga/app/src/main/res/layout/fragment_resultados.xml" value="0.33" />
         <entry key="..\:/Documentos/tennis_liga/app/src/main/res/layout/header.xml" value="0.25" />
+        <entry key="..\:/Documentos/tennis_liga/app/src/main/res/layout/itemList1.xml" value="0.203125" />
         <entry key="..\:/Documentos/tennis_liga/app/src/main/res/layout/item_copa.xml" value="0.15520833333333334" />
-        <entry key="..\:/Documentos/tennis_liga/app/src/main/res/layout/item_grid.xml" value="0.15520833333333334" />
-        <entry key="..\:/Documentos/tennis_liga/app/src/main/res/layout/item_list.xml" value="0.15520833333333334" />
+        <entry key="..\:/Documentos/tennis_liga/app/src/main/res/layout/item_copaUnica.xml" value="0.203125" />
+        <entry key="..\:/Documentos/tennis_liga/app/src/main/res/layout/item_grid.xml" value="0.5" />
+        <entry key="..\:/Documentos/tennis_liga/app/src/main/res/layout/item_list.xml" value="0.33" />
+        <entry key="..\:/Documentos/tennis_liga/app/src/main/res/layout/itme_competencia.xml" value="0.33" />
         <entry key="..\:/Documentos/tennis_liga/app/src/main/res/menu/barra.xml" value="0.15520833333333334" />
         <entry key="..\:/Documentos/tennis_liga/app/src/main/res/menu/drawer_menu.xml" value="0.33" />
+        <entry key="..\:/Documentos/tennis_liga/app/src/main/res/menu/menu_admin.xml" value="0.33" />
         <entry key="..\:/Documentos/tennis_liga/app/src/main/res/menu/menu_barra.xml" value="0.15520833333333334" />
+        <entry key="..\:/Documentos/tennis_liga/app/src/main/res/menu/menu_galeria.xml" value="0.203125" />
       </map>
     </option>
   </component>

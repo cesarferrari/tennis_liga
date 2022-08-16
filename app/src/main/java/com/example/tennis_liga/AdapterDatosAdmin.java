@@ -12,10 +12,10 @@ import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class AdapterDatos extends RecyclerView.Adapter<AdapterDatos.ViewHolderDatos> implements View.OnClickListener{
+public class AdapterDatosAdmin extends RecyclerView.Adapter<AdapterDatosAdmin.ViewHolderDatos> implements View.OnClickListener{
     ArrayList<Personajes> ListDatos;
     private View.OnClickListener listener;
-    public AdapterDatos(ArrayList<Personajes> listDatos) {
+    public AdapterDatosAdmin(ArrayList<Personajes> listDatos) {
         ListDatos = listDatos;
     }
 
@@ -24,7 +24,7 @@ public class AdapterDatos extends RecyclerView.Adapter<AdapterDatos.ViewHolderDa
     public ViewHolderDatos onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         int layout=0;
         if(Utilidades.visualizacion==Utilidades.LIST){
-            layout=R.layout.item_list;
+            layout=R.layout.item_list1;
         }else{
             layout=R.layout.item_grid;
         }
@@ -39,11 +39,19 @@ public class AdapterDatos extends RecyclerView.Adapter<AdapterDatos.ViewHolderDa
 
         holder.nombre.setText(ListDatos.get(position).getNombre());
 
-        if(Utilidades.visualizacion==Utilidades.LIST){
+
             holder.descripcion.setText(ListDatos.get(position).getL_name());
-        }
+
         holder.id.setText(ListDatos.get(position).getId());
         holder.foto.setImageResource(ListDatos.get(position).getFoto());
+        if(ListDatos.get(position).getRol()==0){
+            holder.rol.setText("Espectador");
+
+        }else if(ListDatos.get(position).getRol()==1){
+            holder.rol.setText("Jugador");
+        }else if(ListDatos.get(position).getRol()==2){
+            holder.rol.setText("jugador/Administrador");
+        }
     }
 
     @Override
@@ -64,18 +72,21 @@ public class AdapterDatos extends RecyclerView.Adapter<AdapterDatos.ViewHolderDa
 
 
     public class ViewHolderDatos extends RecyclerView.ViewHolder {
-        TextView nombre,descripcion,id;
+        TextView nombre,descripcion,id,rol;
         CircleImageView foto;
+
 
         public ViewHolderDatos(@NonNull View itemView) {
             super(itemView);
-            if(Utilidades.visualizacion==Utilidades.LIST){
+
                 descripcion=(TextView) itemView.findViewById(R.id.txt_2);
-            }
+
             nombre=(TextView) itemView.findViewById(R.id.txt_1);
 
             foto=(CircleImageView) itemView.findViewById(R.id.CIV_id);
-            id=(TextView) itemView.findViewById(R.id.txt_id);
+            id=(TextView) itemView.findViewById(R.id.txt_idP);
+            rol=(TextView) itemView.findViewById(R.id.txt_rol);
+
 
         }
 

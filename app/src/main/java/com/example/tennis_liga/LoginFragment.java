@@ -35,13 +35,7 @@ public class LoginFragment extends Fragment implements Response.Listener<JSONObj
     JsonObjectRequest jsonObjectRequest;
     String url="";
      ProgressDialog progreso;
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-
-        }
-    }
+      private Url urlX;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -52,6 +46,7 @@ public class LoginFragment extends Fragment implements Response.Listener<JSONObj
         pass=vista.findViewById(R.id.txt_password);
         btn_json=vista.findViewById(R.id.button);
         btn_nuevoUsuario=vista.findViewById(R.id.button2);
+        urlX=new Url();
         btn_nuevoUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,7 +69,7 @@ public class LoginFragment extends Fragment implements Response.Listener<JSONObj
         progreso= new ProgressDialog(getActivity());
         progreso.setMessage(getString(R.string.cargando));
         progreso.show();
-        url="http://192.168.1.69/padel/consulta_login.php?nombre="+user.getText().toString()
+        url=urlX.getUrl()+"/padel/consulta_jugador2.php?nombre="+user.getText().toString()
                 +"&and&password="+pass.getText().toString();
 
         url=url.replace(" ","%20");
@@ -87,16 +82,13 @@ public class LoginFragment extends Fragment implements Response.Listener<JSONObj
         Toast.makeText(getActivity(), getString(R.string.erroC), Toast.LENGTH_SHORT).show();
 
     }
-
-
-
     @Override
     public void onResponse(JSONObject response) {
 progreso.hide();
         Personajes personaje= new Personajes();
         JSONArray json=response.optJSONArray("jugador");
         JSONObject jsonObject=null;
-        Intent intento = new Intent(getActivity(),Login.class);
+
         try {
             jsonObject=json.getJSONObject(0);
 
@@ -111,25 +103,31 @@ progreso.hide();
              personaje.setSize(jsonObject.optString("talla_camiseta"));
             personaje.setPass(jsonObject.optString("password"));
             personaje.setRol(jsonObject.optInt("rol"));
+            personaje.setId(jsonObject.optString("id"));
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
+        Intent intento = new Intent(getActivity(),Home.class);
   Bundle bundle= new Bundle();
         int roles=(personaje.getRol());
-        if(personaje.getNombre().equalsIgnoreCase(user.getText().toString())&&personaje.getPass().equalsIgnoreCase(pass.getText().toString())&&
-                roles==2){
-            Intent in = new Intent(getActivity(),Login.class);
+        if(personaje.getNombre().equalsIgnoreCase(user.getText().toString())&&personaje.getPass().equalsIgnoreCase
+                (pass.getText().toString())&&(roles==2||roles==3)){
+            Intent in = new Intent(getActivity(),Administrador.class);
              bundle.putSerializable("usuario",personaje);
              in.putExtras(bundle);
+            Toast.makeText(getActivity(), ""+personaje.getId(), Toast.LENGTH_SHORT).show();
+
             startActivity(in);
         }else if(personaje.getNombre().equalsIgnoreCase(user.getText().toString())&&personaje.getPass().equalsIgnoreCase(pass.getText().toString())&&
                 roles==1){
             bundle.putSerializable("usuario",personaje);
+            intento.putExtras(bundle);
             startActivity(intento);
         }else if(personaje.getNombre().equalsIgnoreCase(user.getText().toString())&&personaje.getPass().equalsIgnoreCase(pass.getText().toString())&&
                 roles==0){
             bundle.putSerializable("usuario",personaje);
+            intento.putExtras(bundle);
              startActivity(intento);
         }else
             Toast.makeText(getActivity(), getString(R.string.no_encuentra), Toast.LENGTH_SHORT).show();

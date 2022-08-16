@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -25,71 +25,67 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.*;
+import java.util.ArrayList;
 
 
-public class CompetenciasFR extends Fragment implements Response.Listener<JSONObject>,Response.ErrorListener {
+public class competencia_participante extends Fragment implements Response.Listener<JSONObject>,Response.ErrorListener{
     private RecyclerView recyclerView;
     private RequestQueue requestQueue;
-    private String url="/",deber,err,conect,charge;
-    private String uno="",dos="",mark;
+    private String url="/",deber,err,conect,charge,recibeId,recibeNombre,recibeRol;
+    private String uno="",dos="";
     private ProgressDialog progress;
     private JsonObjectRequest jsonObjectRequest;
-    private ArrayList<Competicion>ListDatos;
+    private ArrayList<Competicion> ListDatos;
     private Url urlx=new Url();
+    AdapterCompetencia adaptercompet;
 
-    AdapterCompetencia adapter;
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
 
-        }
+            if (getArguments() != null) {
+                recibeId = getArguments().getString("kid", "valor 0");
+                recibeNombre=getArguments().getString("knombre","valor 0");
+                recibeRol=getArguments().getString("krol","valor0");
+
+
+            }
+            Toast.makeText(getActivity(), "nada o q "+recibeId+recibeRol+recibeNombre, Toast.LENGTH_SHORT).show();
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View vista=inflater.inflate(R.layout.fragment_competencias_f_r, container, false);
+        View vista=inflater.inflate(R.layout.fragment_competencia_participante, container, false);
         ListDatos= new ArrayList<Competicion>();
         recyclerView=vista.findViewById(R.id.recycler_competencias);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-
-
+        Toast.makeText(getActivity(), "nada o q "+recibeId, Toast.LENGTH_SHORT).show();
         err=getString(R.string.erroC);
         conect=getString(R.string.conexion);
         charge=getString(R.string.cargando);
         requestQueue= Volley.newRequestQueue(getActivity());
-         adapter = new AdapterCompetencia(ListDatos);
-
+         adaptercompet = new AdapterCompetencia(ListDatos);
         Utilidades.visualizacion=Utilidades.LIST;
-      recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-      ejecutar_servicio();
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        ejecutar_servicio();
+        adaptercompet.setOnClickListenter(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+          String r=   ListDatos.get(recyclerView.getChildAdapterPosition(v)).getCompeticion();
+                Toast.makeText(getActivity(), ""+r, Toast.LENGTH_SHORT).show();
 
-      adapter.setOnClickListenter(new View.OnClickListener() {
-          @Override
-          public void onClick(View v) {
 
-               mark= ListDatos.get(recyclerView.getChildAdapterPosition(v)).getCompeticion();
-              Toast.makeText(getActivity(), ""+mark, Toast.LENGTH_SHORT).show();
-              siguiente();
-          }
-      });
-
+            }
+        });
         return vista;
     }
-   public void siguiente(){
-
-
-        Intent intent=new Intent(getActivity(),CompetenciasActivity.class);
-       intent.putExtra("compet",mark);
-       startActivity(intent);
-   }
     public void ejecutar_servicio(){
         progress= new ProgressDialog(getActivity());
         progress.setMessage(charge);
         progress.show();
-        url=urlx.getUrl()+"/padel/consulta_competencia.php";
+        url=urlx.getUrl()+"/padel/consulta_competencia_actual.php?player1="+recibeId+"&player2="+recibeId;
 
         jsonObjectRequest= new JsonObjectRequest(Request.Method.GET,url,null,this,this);
         requestQueue.add(jsonObjectRequest);
@@ -113,11 +109,10 @@ public class CompetenciasFR extends Fragment implements Response.Listener<JSONOb
                 jsonObject=json.getJSONObject(i);
                 personaje.setCompeticion(jsonObject.optString("competicion"));
                 personaje.setTipo_evento(jsonObject.optString("tipo_evento"));
-
                 personaje.setPhoto(R.drawable.trofeo_tennis);
                 ListDatos.add(personaje);
                 progress.hide();
-                recyclerView.setAdapter(adapter);
+                recyclerView.setAdapter(adaptercompet);
             }
         } catch (JSONException e) {
             e.printStackTrace();

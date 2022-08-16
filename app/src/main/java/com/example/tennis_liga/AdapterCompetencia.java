@@ -4,7 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ListAdapter;
+
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -20,18 +20,18 @@ import java.util.ArrayList;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class AdapterCompetencia extends RecyclerView.Adapter<AdapterCompetencia.ViewHolderDatos> implements View.OnClickListener {
-    ArrayList<Personajes> ListDatos;
+    ArrayList<Competicion> ListDatos;
     private View.OnClickListener listener;
 
-    public AdapterCompetencia(ArrayList<Personajes> listDatos) {
+    public AdapterCompetencia(ArrayList<Competicion> listDatos) {
         ListDatos = listDatos;
     }
 
     @NonNull
     @Override
     public ViewHolderDatos onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        int layout;
-        layout=R.layout.item_copa;
+
+        int layout=R.layout.item_copa;
 
         View view= LayoutInflater.from(parent.getContext()).inflate(layout,null,false);
         view.setOnClickListener(this);
@@ -40,9 +40,9 @@ public class AdapterCompetencia extends RecyclerView.Adapter<AdapterCompetencia.
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolderDatos holder, int position) {
-     holder.competicion.setText(ListDatos.get(position).getL_name());
-     holder.evento.setText(ListDatos.get(position).getNombre());
-     holder.foto.setImageResource(ListDatos.get(position).getFoto());
+     holder.competicion.setText(ListDatos.get(position).getCompeticion());
+     holder.evento.setText(ListDatos.get(position).getTipo_evento());
+     holder.foto.setImageResource(ListDatos.get(position).getPhoto());
     }
 
     @Override

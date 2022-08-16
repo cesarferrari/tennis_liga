@@ -12,9 +12,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tennis_liga">
         <activity
+            android:name=".Prueba"
+            android:exported="false"
+            android:theme="@style/Theme.Liga_padel"/>
+        <activity
+            android:name=".CompetenciasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Estadisticas"
+            android:exported="false"
+            android:theme="@style/Theme.Liga_padel"/>
+        <activity
             android:name=".Login"
             android:exported="false"
-            android:theme="@style/Theme.Liga_adminX"/>
+            android:theme="@style/Theme.Liga_adminX" />
         <activity
             android:name=".Administrador"
             android:exported="false"
@@ -29,8 +40,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.Liga_padelX"
-          >
+            android:theme="@style/Theme.Liga_padelX">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

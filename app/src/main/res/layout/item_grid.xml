@@ -15,6 +15,14 @@
         app:civ_border_width="2dp"
         android:id="@+id/CIV_id"/>
     <TextView
+        android:id="@+id/txt_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="id"
+        android:textColor="@color/purple_700"
+        android:textSize="8sp"
+        android:textStyle="bold" />
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="nombre"

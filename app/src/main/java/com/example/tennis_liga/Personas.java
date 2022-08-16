@@ -2,7 +2,7 @@ package com.example.tennis_liga;
 
 import java.io.Serializable;
 
-public class Personajes  implements Serializable{
+public class Personas implements Serializable {
     private String name;
     private String l_name;
     private String birthday;
@@ -16,41 +16,6 @@ public class Personajes  implements Serializable{
     private String cord;
     private int rol;
     private String pass;
-    private String id;
-    private String urlImagePrincipal;
-    private String efectividad;
-
-    public String getEfectividad() {
-        return efectividad;
-    }
-
-    public void setEfectividad(String efectividad) {
-        this.efectividad = efectividad;
-    }
-
-    public String getUrlImagePrincipal() {
-        return urlImagePrincipal;
-    }
-
-    public void setUrlImagePrincipal(String urlImagePrincipal) {
-        this.urlImagePrincipal = urlImagePrincipal;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getBirthday() {
         return birthday;
@@ -164,4 +129,3 @@ public class Personajes  implements Serializable{
         this.name = name;
     }
 }
-

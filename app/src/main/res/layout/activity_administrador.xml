@@ -27,64 +27,9 @@
                 android:textStyle="bold" />
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:gravity="center">
-
-                <Button
-                    android:id="@+id/CrearAdmin"
-                    style="?attr/materialButtonOutlinedStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="onclick"
-                    android:textSize="9sp"
-                    android:text="@string/managerRol"
-                    app:cornerRadius="15dp"
-                    app:strokeColor="@color/admin_amarillo" />
 
 
-                <Button
-                    android:id="@+id/Resultados"
-                    style="?attr/materialButtonOutlinedStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="onclick"
-                    android:textSize="9sp"
-                    android:text="@string/resultados_competencia"
-                    app:cornerRadius="15dp"
-                    app:strokeColor="@color/admin_amarillo" />
 
-                <Button
-                    android:id="@+id/CrearEvento"
-                    style="?attr/materialButtonOutlinedStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="onclick"
-
-                    android:textSize="9sp"
-                    android:text="@string/boton_crearEvento"
-                    app:cornerRadius="15dp"
-
-                    app:strokeColor="@color/admin_amarillo" />
-
-
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/home"
-                style="?attr/materialButtonOutlinedStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="onclick"
-                android:textSize="20sp"
-                android:text="@string/menu_home"
-                android:layout_marginLeft="@dimen/space"
-                android:layout_marginRight="@dimen/space"
-                app:cornerRadius="15dp"
-
-                app:strokeColor="@color/admin_amarillo" />
             <FrameLayout
                 android:id="@+id/contenedor"
                 android:name="com.example.liga_padel.CrearCompetenciaFragment"

@@ -1,5 +1,7 @@
 package com.example.tennis_liga;
 
+import static com.android.volley.toolbox.Volley.newRequestQueue;
+
 import android.app.ProgressDialog;
 import android.os.Bundle;
 
@@ -23,17 +25,22 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.time.Month;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class CrearCompetenciaFragment extends Fragment implements Response.Listener<JSONObject>,Response.ErrorListener {
     private EditText et_competencia,et_evento,et_premio,et_categoria,et_sede;
-
-    RequestQueue requestQueue;
+    private static  Url urlx= new Url();
+    RequestQueue requestQueue,requestQueueCompara;
     String url="/",deber;
-
+    String comparando;
+private static final String urlCompara=urlx.getUrl()+"/padel/consulta_competencia.php";
     ProgressDialog progress;
     JsonObjectRequest jsonObjectRequest;
     private Spinner spin,spinDay,spinYear,spinX,spinDayX,spinYearX;
@@ -42,6 +49,7 @@ public class CrearCompetenciaFragment extends Fragment implements Response.Liste
     private TextView fechaInicio,fechaFIn;
     private Button fecha,fechax,btn_compet;
 
+    private String recibeRol,recibeId,recibeNombre;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +74,8 @@ public class CrearCompetenciaFragment extends Fragment implements Response.Liste
         et_sede=vista. findViewById(R.id.Et_sede);
         et_premio=vista. findViewById(R.id.Et_premio);
         btn_compet=vista.findViewById(R.id.btn_insertarCompetencia);
+
+
         btn_compet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,13 +85,18 @@ public class CrearCompetenciaFragment extends Fragment implements Response.Liste
                        ||et_sede.getText().toString().equalsIgnoreCase("") || fechaInicio.getText().toString()
                         .equalsIgnoreCase("") || fechaFIn.getText().toString().equalsIgnoreCase("")) {
                     Toast.makeText(getActivity(), deber, Toast.LENGTH_SHORT).show();
-                } else
-                    ejecutar_servicio();
-                    clean();
+                } else{
+                  ComparaCompeticion();
+
+
+                }
+
             }
         });
 
-        requestQueue= Volley.newRequestQueue(getActivity());
+        requestQueue= newRequestQueue(getActivity());
+        requestQueueCompara=Volley.newRequestQueue(getActivity());
+
         fecha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -271,7 +286,7 @@ public class CrearCompetenciaFragment extends Fragment implements Response.Liste
         progress= new ProgressDialog(getActivity());
         progress.setMessage("cargando...");
         progress.show();
-        url="http://192.168.1.69/padel/crear_competencia.php?competicion="+et_competencia.getText().toString()+"&tipo_evento="+et_evento.getText().toString()
+        url=urlx.getUrl()+"/padel/crear_competencia.php?competicion="+et_competencia.getText().toString()+"&tipo_evento="+et_evento.getText().toString()
                 +"&categoria="+et_categoria.getText().toString()+"&premio="+et_premio.getText().toString()+"&" +
                 "sede="+et_sede.getText().toString()+"&fecha_inicio="+fechaInicio.getText().toString()+"&fecha_fin="+fechaFIn.getText().toString();
         url=url.replace(" ","%20");
@@ -298,4 +313,61 @@ public class CrearCompetenciaFragment extends Fragment implements Response.Liste
         fechaInicio.setText("");
         fechaFIn.setText("");
     }
+    public void ComparaCompeticion(){
+       List<String>competicion=new ArrayList<>();
+
+     JsonObjectRequest jsonObjectcompeticion=new JsonObjectRequest(Request.Method.GET, urlCompara, null,
+             new Response.Listener<JSONObject>() {
+                 int cont=0;
+                 @Override
+                 public void onResponse(JSONObject response) {
+                     JSONArray array=response.optJSONArray("competition");
+                     try{
+                         for(int i=0;i<array.length();i++){
+                             JSONObject json =array.getJSONObject(i);
+                              competicion.add(json.optString("competicion"));
+                         }
+
+
+                     }catch(JSONException e){
+                         Toast.makeText(getActivity(), ""+e, Toast.LENGTH_SHORT).show();
+
+                     }
+                     for(int j=0;j<competicion.size();j++){
+                         if(competicion.get(j).equalsIgnoreCase(et_competencia.getText().toString().trim())){
+                             cont++;
+                         }
+
+                     }
+                     if(cont==0) {
+
+                      ejecutar_servicio();
+                         clean();
+                     }else{
+                         Toast.makeText(getActivity(), "la competencia ya existe en la BD"+cont, Toast.LENGTH_SHORT).show();
+                         et_competencia.setText("");
+                     }
+                 }
+             }, new Response.ErrorListener() {
+         @Override
+         public void onErrorResponse(VolleyError error) {
+             Toast.makeText(getActivity(), ""+error, Toast.LENGTH_SHORT).show();
+         }
+     });
+     requestQueueCompara.add(jsonObjectcompeticion);
+        for(int i=0;i<competicion.size();i++){
+
+            Toast.makeText(getActivity(), "arr"+competicion.get(i), Toast.LENGTH_SHORT).show();
+
+        }
+
+    }
+    /*public boolean compare(){
+        boolean flag=false;
+        for(int i=0;i<ComparaCompeticion().size();i++){
+            Toast.makeText(getActivity(), ""+ComparaCompeticion(), Toast.LENGTH_SHORT).show();
+        }
+        return flag;
+    }*/
+
 }

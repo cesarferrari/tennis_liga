@@ -16,6 +16,20 @@
         <item>diciembre</item>
 
     </string-array>
+    <string-array name="imagenes">
+        <item>https://3.bp.blogspot.com/-r9vMUP30Ss4/UKIVE7_fiYI/AAAAAAAANtU/ZXVq1ooxkKo/s1600/albert-montanes-of-spai2466847.jpg</item>
+        <item>https://e00-marca.uecdn.es/imagenes/2012/10/22/tenis/1350931158_extras_portadilla_0.jpg</item>
+        <item>https://shumii.files.wordpress.com/2008/06/nadal11.jpg</item>
+        <item>https://i.ytimg.com/vi/bS8d_iLREhM/maxresdefault.jpg</item>
+        <item>https://www.nocreasnada.com/wp-content/uploads/2018/12/2018-12-04_5c06adf49f6db_1.jpg</item>
+        <item>https://ugc.kn3.net/i/origin/http://l.yimg.com/a/i/mx/sport/660/660_iva_10.jpg</item>
+        <item>julio</item>
+        <item>agosto </item>
+        <item>septiembre</item>
+        <item>octubre</item>
+        <item>noviembre</item>
+        <item>diciembre</item>
+    </string-array>
     <string-array name="años">
         <item>2022</item>
         <item>2023</item>
@@ -114,6 +128,8 @@
     <string name="nivel">nivel</string>
     <string name="jugador">jugador</string>
     <string name="cero">0</string>
+    <string name="espectador">espectador</string>
+    <string name="jugador_admin">jugador/administrador</string>
     <string name="padel">padel</string>
     <string name="cargando">cargando...</string>
     <string name="boton_contraseña1">Recuperar contraseña</string>
@@ -123,6 +139,10 @@
     <string name="boton_product1">Productos</string>
     <string name="boton_servicios1">Servicios</string>
     <string name="boton_crearEvento">Crear evento</string>
+    <string name="boton_crearMatch">Crear encuentro</string>
+    <string name="tipo_match">tipo de evento</string>
+    <string name="choose_player1">selecciona jugador </string>
+
     <string name="boton_option1">Opcion1</string>
     <string name="boton_option2">Opcion 2</string>
     <string name="boton_option3">Opcion 3</string>
@@ -147,6 +167,11 @@
     <string name="liga">liga tennis</string>
     <string name="principal">principal</string>
     <string name="secunadario">secundario</string>
+    <string name="nuevo">nuevo resultado</string>
+    <string name="nuevoE">nuevo encuentro</string>
+    <string name="match">crear partido</string>
+    <string name="mycompetition">mis competiciones</string>
+    <string name="same_player">no puedes guardar el mismo jugador</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_home_admin">HomeAdminActivity</string>
     <string name="open">abrir</string>

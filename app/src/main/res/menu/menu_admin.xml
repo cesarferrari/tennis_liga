@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/admin5"
+        android:title="@string/match" />
+    <item
+        android:id="@+id/admin1"
+        android:title="@string/managerRol" />
+    <item
+        android:id="@+id/admin2"
+        android:title="@string/resultados_competencia" />
+    <item
+        android:id="@+id/admin3"
+        android:title="@string/boton_crearEvento" />
+    <item
+        android:id="@+id/admin4"
+        android:title="@string/menu_home" />
+</menu>

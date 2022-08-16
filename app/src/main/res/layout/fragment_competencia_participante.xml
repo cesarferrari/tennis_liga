@@ -3,13 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CompetenciasFR">
-
-
-     <androidx.recyclerview.widget.RecyclerView
+    tools:context=".competencia_participante">
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_marginTop="52dp"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:id="@+id/recycler_competencias"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/recycler_competencias"/>
 
 </FrameLayout>

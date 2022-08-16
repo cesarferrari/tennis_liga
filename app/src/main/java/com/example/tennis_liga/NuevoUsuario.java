@@ -3,6 +3,7 @@ package com.example.tennis_liga;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -26,15 +27,19 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class NuevoUsuario extends AppCompatActivity {
+public class NuevoUsuario extends AppCompatActivity implements Response.Listener<JSONObject>,Response.ErrorListener{
 
     private EditText nombre;
     private TextView nacimiento;
@@ -47,22 +52,30 @@ public class NuevoUsuario extends AppCompatActivity {
     private EditText raqueta;
     private  EditText cordaje;
     private   EditText apellido;
+    private Url urlx=new Url();
+
+    private  String urldex;
     private   EditText email;
     private  EditText password;
     private RequestQueue requestQueue;
     private Button btn_ingresaJugador,fecha;
-    private  String url,sexo;
+    private  String urlInsertar, sexo;
     private   String d,month,y,t;
     private Spinner spin,spinDay,spinYear,spinCamiseta;
     private RadioButton M,F;
     private CircleImageView fotografia;
-    Intent in;
+    private Intent in;
+    private RequestQueue  requestQueueGames1;
+
+    private ProgressDialog progress ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nuevo_usuario);
            //  getSupportActionBar().setDisplayShowHomeEnabled(true);
           //   getSupportActionBar().setIcon(R.mipmap.pelot);
+        requestQueue= Volley.newRequestQueue(getApplicationContext());
+        requestQueueGames1=Volley.newRequestQueue(getApplicationContext());
         int arr[]= new int[100];
         String year[]=new String[100];
         spin=(Spinner)findViewById(R.id.spinner);
@@ -86,7 +99,8 @@ public class NuevoUsuario extends AppCompatActivity {
         F=(RadioButton)findViewById(R.id.radioF);
         fotografia=(CircleImageView)findViewById(R.id.profile_image);
 
-        url="http://192.168.1.69/prueba_android/insertar_jugador.php";
+
+
         btn_ingresaJugador=(Button)findViewById(R.id.btn_sigJugador);
         fecha=(Button)findViewById(R.id.btn_fecha);
         fecha.setOnClickListener(new View.OnClickListener() {
@@ -183,34 +197,33 @@ public class NuevoUsuario extends AppCompatActivity {
             public void onClick(View v) {
                 in = new Intent(getApplicationContext(),Home.class);
                 if(nombre.getText().toString().trim().isEmpty()||nacimiento.getText().toString().trim().isEmpty()||
-                        nacionalidad.getText().toString().trim().isEmpty()||pais.getText().toString().trim().isEmpty()||
-                        direccion.getText().toString().trim().isEmpty()||talla.getText().toString().trim().isEmpty()||
-                        estilo.getText().toString().trim().isEmpty()||golpe.getText().toString().trim().isEmpty()||
-                        raqueta.getText().toString().trim().isEmpty()||cordaje.getText().toString().trim().isEmpty()||
+
+
                         apellido.getText().toString().trim().isEmpty()||email.getText().toString().trim().isEmpty()||
                         password.getText().toString().trim().isEmpty()
                 ){
                     Toast.makeText(getApplicationContext(), "debe llenar todos los campos", Toast.LENGTH_SHORT).show();
                 }else if(!nombre.getText().toString().equalsIgnoreCase("")&&!nacimiento.getText().toString().equalsIgnoreCase("")&&
-                !nacionalidad.getText().toString().equalsIgnoreCase("")&&!pais.getText().toString().equalsIgnoreCase("")&&
-                        !direccion.getText().toString().equalsIgnoreCase("")&&!talla.getText().toString().equalsIgnoreCase("")&&
-                !estilo.getText().toString().equalsIgnoreCase("")&&!golpe.getText().toString().equalsIgnoreCase("")&&
-                !raqueta.getText().toString().equalsIgnoreCase("")&&!cordaje.getText().toString().equalsIgnoreCase("")&&
+
                 !apellido.getText().toString().equalsIgnoreCase("")&&!email.getText().toString().equalsIgnoreCase("")&&
                 !password.getText().toString().equalsIgnoreCase("")){
-                    in.putExtra("nombre",nombre.getText().toString().trim());
-                    in.putExtra("apellido",apellido.getText().toString().trim());
-                    in.putExtra("nacimiento",nacimiento.getText().toString().trim());
-                    in.putExtra("nacionalidad",nacionalidad.getText().toString().trim());
-                    in.putExtra("pais",pais.getText().toString().trim());
-                    in.putExtra("camiseta",talla.getText().toString().trim());
-                    in.putExtra("estilo",estilo.getText().toString().trim());
-                    in.putExtra("golpe",golpe.getText().toString().trim());
-                    in.putExtra("raqueta",raqueta.getText().toString().trim());
-                    in.putExtra("cordaje",cordaje.getText().toString().trim());
+                   if(M.isChecked()){
+                       sexo="masculino";
+                   }else if(F.isChecked()){
+                       sexo="femenino";
+                   }
 
 
-                    ejecutarservicio(url);
+
+
+
+
+                   game1(1);
+                  startActivity(in);
+                    /*Toast.makeText(getApplicationContext(), "name="+nombre.getText()+"last name="+apellido.getText()+"y"+
+                            nacimiento.getText()+"talla="+talla.getText()+"y"+sexo+"cnacionalidad="+nacionalidad.getText()+"actual="+pais.getText()+
+                            "estilo="+estilo.getText()+"golpe="+golpe.getText()+"raqueta="+raqueta.getText()+"cordaje="+cordaje.getText().toString()
+                            , Toast.LENGTH_SHORT).show();*/
                 }
 
 
@@ -232,50 +245,8 @@ public class NuevoUsuario extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(opc);
     }
-    private void ejecutarservicio(String url){
-        StringRequest stringRequest=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
 
-                startActivity(in);
-                Toast.makeText(getApplicationContext(), "operacion exitosa ", Toast.LENGTH_LONG).show();
 
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), "error al conectar ", Toast.LENGTH_SHORT).show();
-            }
-        }){
-            protected Map<String,String> getParams()throws AuthFailureError {
-                Map<String,String>parametros = new HashMap<String,String>();
-
-                parametros.put("nombre",nombre.getText().toString());
-                parametros.put("fecha_nacimiento",nacimiento.getText().toString());
-                parametros.put("nacionalidad",nacionalidad.getText().toString());
-                parametros.put("pais_actual",pais.getText().toString());
-                parametros.put("direccion",direccion.getText().toString());
-                parametros.put("talla_camiseta",talla.getText().toString());
-                parametros.put("estilo_juego",estilo.getText().toString());
-                parametros.put("mejor_golpe",golpe.getText().toString());
-                parametros.put("raqueta",raqueta.getText().toString());
-                parametros.put("cordaje",cordaje.getText().toString());
-                parametros.put("apellido",apellido.getText().toString());
-                parametros.put("email",email.getText().toString());
-                parametros.put("password",password.getText().toString());
-                if(M.isChecked()==true){
-                    sexo="masculino";
-                }
-                if(F.isChecked()==true){
-                    sexo="femenino";
-                }
-                parametros.put("sexo",sexo);
-                return parametros;
-            }
-        };
-        requestQueue= Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest);
-    }
     public String month(){
         String mes_numero="";
         if (month.equalsIgnoreCase("january")||month.equalsIgnoreCase("enero")){
@@ -340,5 +311,45 @@ public class NuevoUsuario extends AppCompatActivity {
             fotografia.setImageURI(path);
         }
     }
+    public void game1(int c){
+        urldex=urlx.getUrl()+"/padel/inserta_jugador1.php?nombre="+nombre.getText().toString()+"&apellido="+apellido.getText().toString()
+                +"&fecha_nacimiento="+nacimiento.getText().toString()+"&email="+email.getText().toString()+"&password="
+                +password.getText().toString()+"&pais_actual="+pais.getText().toString()+"&nacionalidad="+nacionalidad.getText().toString()
+        +"&talla_camiseta="+talla.getText().toString()+"&estilo_juego="+estilo.getText().toString()+"&raqueta="+raqueta.getText()
+        .toString()+"&cordaje="+ cordaje.getText().toString()+"&mejor_golpe="+golpe.getText().toString()+"&sexo="+sexo+
+        "&direccion="+direccion.getText().toString();
+        urldex=urldex.replace(" ","%20");
+        JsonObjectRequest jsonObjectRequestG1=new JsonObjectRequest(Request.Method.GET,
 
+                urldex, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+
+                Toast.makeText(getApplicationContext(), ""+response, Toast.LENGTH_SHORT).show();
+
+            }
+            }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(), ""+error, Toast.LENGTH_SHORT).show();
+            }
+        }
+        );
+        requestQueueGames1.add(jsonObjectRequestG1);
+
+
+    }
+
+
+    @Override
+    public void onErrorResponse(VolleyError error) {
+        progress.hide();
+        Toast.makeText(getApplicationContext(), ""+error, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onResponse(JSONObject response) {
+progress.hide();
+        Toast.makeText(getApplicationContext(), ""+response, Toast.LENGTH_SHORT).show();
+    }
 }

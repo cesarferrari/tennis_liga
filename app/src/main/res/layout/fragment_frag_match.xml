@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/medium"
+    android:paddingRight="@dimen/medium"
+    android:orientation="vertical"
+    tools:context=".FragMatch">
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium"
+        android:text="@string/nuevo"
+        android:id="@+id/btn_new"/>
+<Spinner
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/medium"
+    android:id="@+id/spin_compet"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <Spinner
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/spin_player1"/>
+        <Spinner
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/spin_player2"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium"
+        android:layout_marginBottom="@dimen/large"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="@dimen/large1"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="@string/tipo_match"/>
+        <EditText
+            android:layout_width="@dimen/maxima"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_match"/>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="@dimen/medium"
+        android:text="@string/resultados"
+        android:id="@+id/btn_mostrar"/>
+
+
+
+</LinearLayout>

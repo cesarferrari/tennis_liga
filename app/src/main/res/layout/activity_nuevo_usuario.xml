@@ -263,12 +263,11 @@
                 android:id="@+id/profile_image"
                 android:layout_width="300dp"
                 android:layout_height="300dp"
-               android:gravity="center"
                 android:layout_gravity="center_horizontal"
+                android:gravity="center"
                 android:src="@drawable/img_profile"
                 app:civ_border_color="#FF000000"
-                app:civ_border_width="2dp"
-               />
+                app:civ_border_width="2dp" />
 
             <Button
                 android:id="@+id/btn_imagen"

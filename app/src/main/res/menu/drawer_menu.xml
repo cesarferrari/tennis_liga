@@ -9,9 +9,15 @@
              </item>
              <item android:icon="@drawable/ic_group"
                  android:id="@+id/personas"
+                 android:title="@string/boton_competicion1">
+
+             </item>
+             <item android:icon="@drawable/ic_group"
+                 android:id="@+id/competicion1"
                  android:title="@string/jugador">
 
              </item>
+
          </menu>
 </item>
     <item android:title="@string/secunadario">
